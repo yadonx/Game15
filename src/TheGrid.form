@@ -43,7 +43,7 @@
               <enabled value="false"/>
               <font name="JetBrains Mono" size="48"/>
               <foreground color="-16777216"/>
-              <text value="15"/>
+              <text value="2"/>
             </properties>
           </component>
           <component id="6d87d" class="javax.swing.JButton" binding="button9">
@@ -57,7 +57,7 @@
               <enabled value="false"/>
               <font name="JetBrains Mono" size="48"/>
               <foreground color="-16777216"/>
-              <text value="15"/>
+              <text value="9"/>
             </properties>
           </component>
           <component id="b82ef" class="javax.swing.JButton" binding="button13">
@@ -71,7 +71,7 @@
               <enabled value="false"/>
               <font name="JetBrains Mono" size="48"/>
               <foreground color="-16777216"/>
-              <text value="15"/>
+              <text value="13"/>
             </properties>
           </component>
           <component id="87888" class="javax.swing.JButton" binding="button14">
@@ -85,7 +85,7 @@
               <enabled value="false"/>
               <font name="JetBrains Mono" size="48"/>
               <foreground color="-16777216"/>
-              <text value="15"/>
+              <text value="14"/>
             </properties>
           </component>
           <component id="5ccca" class="javax.swing.JButton" binding="button10">
@@ -99,7 +99,7 @@
               <enabled value="false"/>
               <font name="JetBrains Mono" size="48"/>
               <foreground color="-16777216"/>
-              <text value="15"/>
+              <text value="10"/>
             </properties>
           </component>
           <component id="8870d" class="javax.swing.JButton" binding="button6">
@@ -113,7 +113,7 @@
               <enabled value="false"/>
               <font name="JetBrains Mono" size="48"/>
               <foreground color="-16777216"/>
-              <text value="15"/>
+              <text value="6"/>
             </properties>
           </component>
           <component id="90196" class="javax.swing.JButton" binding="button7">
@@ -127,7 +127,7 @@
               <enabled value="false"/>
               <font name="JetBrains Mono" size="48"/>
               <foreground color="-16777216"/>
-              <text value="15"/>
+              <text value="7"/>
             </properties>
           </component>
           <component id="ba5d6" class="javax.swing.JButton" binding="button11">
@@ -141,7 +141,7 @@
               <enabled value="false"/>
               <font name="JetBrains Mono" size="48"/>
               <foreground color="-16777216"/>
-              <text value="15"/>
+              <text value="11"/>
             </properties>
           </component>
           <component id="e1034" class="javax.swing.JButton" binding="button16">
@@ -169,7 +169,7 @@
               <enabled value="true"/>
               <font name="JetBrains Mono" size="48"/>
               <foreground color="-16777216"/>
-              <text value="15"/>
+              <text value="12"/>
             </properties>
           </component>
           <component id="c8511" class="javax.swing.JButton" binding="button8">
@@ -184,7 +184,7 @@
               <font name="JetBrains Mono" size="48"/>
               <foreground color="-16777216"/>
               <hideActionText value="false"/>
-              <text value="15"/>
+              <text value="8"/>
             </properties>
           </component>
           <component id="11a19" class="javax.swing.JButton" binding="button3">
@@ -198,7 +198,7 @@
               <enabled value="false"/>
               <font name="JetBrains Mono" size="48"/>
               <foreground color="-16777216"/>
-              <text value="15"/>
+              <text value="3"/>
             </properties>
           </component>
           <component id="fd40" class="javax.swing.JButton" binding="button4">
@@ -212,7 +212,7 @@
               <enabled value="false"/>
               <font name="JetBrains Mono" size="48"/>
               <foreground color="-16777216"/>
-              <text value="15"/>
+              <text value="4"/>
             </properties>
           </component>
           <component id="f8b8b" class="javax.swing.JButton" binding="button15">
@@ -241,7 +241,7 @@
               <enabled value="false"/>
               <font name="JetBrains Mono" size="48"/>
               <foreground color="-16777216"/>
-              <text value="15"/>
+              <text value="5"/>
             </properties>
           </component>
           <component id="e4214" class="javax.swing.JButton" binding="button1">
@@ -256,7 +256,7 @@
               <font name="JetBrains Mono" size="48"/>
               <foreground color="-16777216"/>
               <hideActionText value="false"/>
-              <text value="15"/>
+              <text value="1"/>
               <verticalAlignment value="0"/>
             </properties>
           </component>

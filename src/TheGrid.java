@@ -83,12 +83,10 @@ public class TheGrid extends JFrame {
         setVisible(true);
         setLocationRelativeTo(null);
         setResizable(false);
-
     }
 
     public static void main(String[] args) {
         TheGrid tg = new TheGrid();
         tg.run();
-
     }
 }
