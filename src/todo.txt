@@ -1,3 +1,0 @@
-Fixa ifsen
-
-fixa en metodod som skapar en ny knapp av e.getsourse();!!!!

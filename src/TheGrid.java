@@ -29,6 +29,8 @@ public class TheGrid extends JFrame {
     private JButton button16;
     private JPanel grid2;
 
+//    private JButton[][] buttonArray = new JButton[4][4];
+
 
     public TheGrid() {
 
@@ -52,6 +54,10 @@ public class TheGrid extends JFrame {
                     button14.setEnabled(true);
                     button16.setEnabled(false);
                 }
+//                JButton temp = buttonArray[3][2];
+//                buttonArray[3][2] = buttonArray[3][3];
+//                buttonArray[3][3] = temp;
+
                 button.setEnabled(false);
                 button.setBackground(Color.black);
                 button.setText("");
