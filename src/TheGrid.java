@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 /**
- * Created by Emil Johansson
+ * Created by Emil Johansson, Liliana Montini Pitra, CRIBB CRIBBSSON, Steffe Steffsson
  * Date: 2020-10-21
  * Time: 18:11
  * Project: Game15
@@ -44,6 +44,7 @@ public class TheGrid extends JFrame {
                 changeButton(buttonPos);
 
             }
+            // hej från Lilis test
         };
 
         button1.addActionListener(listener);
@@ -132,6 +133,7 @@ public class TheGrid extends JFrame {
             default:
                 break;
         }
+
 
     }
 
