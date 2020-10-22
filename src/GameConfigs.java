@@ -5,6 +5,7 @@ import java.util.Random;
 public class GameConfigs {
     private Random random = new Random();
     private JButton[] buttonArray;
+    // test
 
     public void setButtonArray(JButton[] array) {
         buttonArray = array;
