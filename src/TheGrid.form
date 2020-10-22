@@ -277,7 +277,9 @@
         </constraints>
         <properties>
           <background color="-16777216"/>
+          <enabled value="true"/>
           <foreground color="-524024"/>
+          <selected value="false"/>
           <text value="Music"/>
         </properties>
       </component>
