@@ -30,7 +30,7 @@ public class TheGrid extends JFrame {
     private JPanel grid2;
 
 //    private JButton[][] buttonArray = new JButton[4][4];
-
+//demo
 
     public TheGrid() {
 
