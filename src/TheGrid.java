@@ -44,7 +44,7 @@ public class TheGrid extends JFrame {
                 changeButton(buttonPos);
 
             }
-            // hej från Lilis test
+
         };
 
         button1.addActionListener(listener);
