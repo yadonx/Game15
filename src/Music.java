@@ -16,9 +16,7 @@ public class Music {
     }
 
     public void startMusic(){
-        clip.start();
         clip.loop(Clip.LOOP_CONTINUOUSLY);
-
     }
 
     public void stopMusic()  {
