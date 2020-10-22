@@ -29,8 +29,8 @@ public class TheGrid extends JFrame {
     private JButton button16;
     private JPanel grid2;
 
-//    private JButton[][] buttonArray = new JButton[4][4];
-
+    private JButton[] buttonArray = new JButton[]{button1,button2,button3,button4,button5,button6,
+        button7,button8,button9,button10,button11,button12,button13,button14,button15,button16};
 
     public TheGrid() {
 
@@ -38,32 +38,36 @@ public class TheGrid extends JFrame {
         ActionListener listener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JButton button = tempButton(e);
-                if (!button16.isEnabled()){
-                    button16.setText(button.getText());
-                    button16.setBackground(Color.red);
-                    button16.setEnabled(true);
-                    button12.setEnabled(false);
-                    button15.setEnabled(false);
-                }
-                if (!button15.isEnabled()){
-                    button15.setText(button.getText());
-                    button15.setBackground(Color.red);
-                    button15.setEnabled(true);
-                    button11.setEnabled(true);
-                    button14.setEnabled(true);
-                    button16.setEnabled(false);
-                }
+                int button = Integer.parseInt(e.getActionCommand());
+                System.out.println(button);
+
+//                JButton button = tempButton(e);
+//                if (!button16.isEnabled()){
+//                    button16.setText(button.getText());
+//                    button16.setBackground(Color.red);
+//                    button16.setEnabled(true);
+//                    button12.setEnabled(false);
+//                    button15.setEnabled(false);
+//                }
+//                if (!button15.isEnabled()){
+//                    button15.setText(button.getText());
+//                    button15.setBackground(Color.red);
+//                    button15.setEnabled(true);
+//                    button11.setEnabled(true);
+//                    button14.setEnabled(true);
+//                    button16.setEnabled(false);
+//                }
 //                JButton temp = buttonArray[3][2];
 //                buttonArray[3][2] = buttonArray[3][3];
 //                buttonArray[3][3] = temp;
-
-                button.setEnabled(false);
-                button.setBackground(Color.black);
-                button.setText("");
+//
+//                button.setEnabled(false);
+//                button.setBackground(Color.black);
+//                button.setText("");
 
             }
         };
+        button1.addActionListener(listener);
         button2.addActionListener(listener);
         button9.addActionListener(listener);
         button13.addActionListener(listener);
@@ -79,11 +83,16 @@ public class TheGrid extends JFrame {
         button4.addActionListener(listener);
         button15.addActionListener(listener);
         button5.addActionListener(listener);
-        button1.addActionListener(listener);
+
     }
 
     private JButton tempButton(ActionEvent e){
-        return (JButton) e.getSource();
+        JButton temp = (JButton) e.getSource();
+        JButton newButton = new JButton();
+        newButton.setText(temp.getText());
+        newButton.setBackground(temp.getBackground());
+        newButton.setFont(temp.getFont());
+        return newButton;
     }
 
     private void run() {
