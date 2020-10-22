@@ -1,0 +1,9 @@
+Fixa ifsen
+
+fixa en metodod som skapar en ny knapp av e.getsourse();!!!!
+
+
+Fixa med array knapparna.
+
+
+kanske fixa en metod som flyttar den tomma knappen.
