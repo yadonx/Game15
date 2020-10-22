@@ -29,7 +29,7 @@ public class TheGrid extends JFrame {
     private JButton button16;
     private JPanel grid2;
     private JRadioButton musicRadioButton;
-    private JButton iziModeButton;
+    private JButton cheatButton;
     private JButton newGameButton;
 
     private JButton[] buttonArray = new JButton[]{button1, button2, button3, button4, button5, button6,
@@ -47,7 +47,6 @@ public class TheGrid extends JFrame {
                 changeButton(buttonPos);
 
             }
-
         };
 
         button1.addActionListener(listener);
@@ -67,6 +66,20 @@ public class TheGrid extends JFrame {
         button15.addActionListener(listener);
         button5.addActionListener(listener);
 
+
+        newGameButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        cheatButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
     }
 
 
