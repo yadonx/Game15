@@ -41,6 +41,11 @@ public class TheGrid extends JFrame {
                 int button = Integer.parseInt(e.getActionCommand());
                 System.out.println(button);
 
+                if (!buttonArray[16].isEnabled()){
+                    buttonArray[12].setEnabled(true);
+                    buttonArray[15].setEnabled(true);
+                }
+
 //                JButton button = tempButton(e);
 //                if (!button16.isEnabled()){
 //                    button16.setText(button.getText());
@@ -57,9 +62,6 @@ public class TheGrid extends JFrame {
 //                    button14.setEnabled(true);
 //                    button16.setEnabled(false);
 //                }
-//                JButton temp = buttonArray[3][2];
-//                buttonArray[3][2] = buttonArray[3][3];
-//                buttonArray[3][3] = temp;
 //
 //                button.setEnabled(false);
 //                button.setBackground(Color.black);
@@ -93,6 +95,12 @@ public class TheGrid extends JFrame {
         newButton.setBackground(temp.getBackground());
         newButton.setFont(temp.getFont());
         return newButton;
+    } // skit
+
+    private void changeButton(int pos){
+        JButton temp = buttonArray[pos-1];
+        buttonArray[pos-1] = buttonArray[3];
+        buttonArray[3] = temp;
     }
 
     private void run() {
