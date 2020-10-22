@@ -29,8 +29,8 @@ public class TheGrid extends JFrame {
     private JButton button16;
     private JPanel grid2;
 
-//    private JButton[][] buttonArray = new JButton[4][4];
-//demo
+    private JButton[] buttonArray = new JButton[]{button1, button2, button3, button4, button5, button6,
+            button7, button8, button9, button10, button11, button12, button13, button14, button15, button16};
 
     public TheGrid() {
 
@@ -38,32 +38,15 @@ public class TheGrid extends JFrame {
         ActionListener listener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JButton button = tempButton(e);
-                if (!button16.isEnabled()){
-                    button16.setText(button.getText());
-                    button16.setBackground(Color.red);
-                    button16.setEnabled(true);
-                    button12.setEnabled(false);
-                    button15.setEnabled(false);
-                }
-                if (!button15.isEnabled()){
-                    button15.setText(button.getText());
-                    button15.setBackground(Color.red);
-                    button15.setEnabled(true);
-                    button11.setEnabled(true);
-                    button14.setEnabled(true);
-                    button16.setEnabled(false);
-                }
-//                JButton temp = buttonArray[3][2];
-//                buttonArray[3][2] = buttonArray[3][3];
-//                buttonArray[3][3] = temp;
-
-                button.setEnabled(false);
-                button.setBackground(Color.black);
-                button.setText("");
+                int buttonPos = Integer.parseInt(e.getActionCommand());
+                buttonPos = getClickedButton(buttonPos);
+                setAllFalse();
+                changeButton(buttonPos);
 
             }
         };
+
+        button1.addActionListener(listener);
         button2.addActionListener(listener);
         button9.addActionListener(listener);
         button13.addActionListener(listener);
@@ -79,14 +62,102 @@ public class TheGrid extends JFrame {
         button4.addActionListener(listener);
         button15.addActionListener(listener);
         button5.addActionListener(listener);
-        button1.addActionListener(listener);
+
     }
 
-    private JButton tempButton(ActionEvent e){
-        return (JButton) e.getSource();
+
+    private void changeButton(int pos) {
+
+        int oldPos = getLastButton();
+        buttonArray[oldPos].setText(buttonArray[pos].getText());
+        buttonArray[oldPos].setBackground(Color.red);
+        buttonArray[pos].setText("");
+        buttonArray[pos].setBackground(Color.BLACK);
+        int minusFour = pos - 4;
+        int minusOne = pos - 1;
+        int addOne = pos + 1;
+        int addFour = pos + 4;
+
+
+        switch (pos) {
+            case 15:
+                buttonArray[minusFour].setEnabled(true);
+                buttonArray[minusOne].setEnabled(true);
+                break;
+            case 12:
+                buttonArray[minusFour].setEnabled(true);
+                buttonArray[addOne].setEnabled(true);
+                break;
+            case 0:
+                buttonArray[addOne].setEnabled(true);
+                buttonArray[addFour].setEnabled(true);
+                break;
+            case 3:
+                buttonArray[minusOne].setEnabled(true);
+                buttonArray[addFour].setEnabled(true);
+                break;
+            case 13:
+            case 14:
+                buttonArray[minusOne].setEnabled(true);
+                buttonArray[addOne].setEnabled(true);
+                buttonArray[minusFour].setEnabled(true);
+                break;
+            case 11:
+            case 7:
+                buttonArray[minusOne].setEnabled(true);
+                buttonArray[addFour].setEnabled(true);
+                buttonArray[minusFour].setEnabled(true);
+                break;
+            case 1:
+            case 2:
+                buttonArray[minusOne].setEnabled(true);
+                buttonArray[addFour].setEnabled(true);
+                buttonArray[addOne].setEnabled(true);
+                break;
+            case 8:
+            case 4:
+                buttonArray[minusFour].setEnabled(true);
+                buttonArray[addFour].setEnabled(true);
+                buttonArray[addOne].setEnabled(true);
+                break;
+            case 5:
+            case 6:
+            case 9:
+            case 10:
+                buttonArray[minusFour].setEnabled(true);
+                buttonArray[minusOne].setEnabled(true);
+                buttonArray[addFour].setEnabled(true);
+                buttonArray[addOne].setEnabled(true);
+                break;
+            default:
+                break;
+        }
+
     }
 
-    private void run() {
+    private void setAllFalse() {
+        for (int i = 0; i < buttonArray.length; i++) {
+            buttonArray[i].setEnabled(false);
+        }
+    }
+
+    private int getLastButton() {
+        for (int i = 0; i < buttonArray.length; i++) {
+            if (buttonArray[i].getText().isEmpty())
+                return i;
+        }
+        return 0;
+    }
+
+    private int getClickedButton(int pos) {
+        for (int i = 0; i < buttonArray.length; i++) {
+            if (buttonArray[i].getText().equalsIgnoreCase(String.valueOf(pos)))
+                return i;
+        }
+        return 0;
+    }
+
+    public void run() {
         setContentPane(new TheGrid().grid1);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         pack();
