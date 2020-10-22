@@ -10,22 +10,18 @@ public class Music {
             clip = AudioSystem.getClip();
             clip.open(audioInputStream);
 
-            clip.loop(Clip.LOOP_CONTINUOUSLY);
-
         } catch (IOException | UnsupportedAudioFileException | LineUnavailableException e) {
             e.printStackTrace();
-
         }
-
     }
+
     public void startMusic(){
         clip.start();
+        clip.loop(Clip.LOOP_CONTINUOUSLY);
+
     }
+
     public void stopMusic()  {
-
             clip.stop();
-
-
-
     }
 }

@@ -91,11 +91,9 @@ public class TheGrid extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (musicRadioButton.isSelected()){
-                    System.out.println(musicRadioButton.isSelected());
                     music.startMusic();
                 }
                 else{
-                    System.out.println(musicRadioButton.isSelected());
                     music.stopMusic();
                 }
             }
