@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+
 /**
  * Created by Emil Johansson och slöhögarna.
  * test igen
@@ -31,10 +32,12 @@ public class TheGrid extends JFrame {
     private JPanel grid2;
 
     private JButton[] buttonArray = new JButton[]{button1, button2, button3, button4, button5, button6,
-            button7, button8, button9, button10, button11, button12, button13, button14, button15, button16};
+            button7, button8, button9, button10, button11, button12, button13, button14, button15,button16};
 
     public TheGrid() {
-
+        GameConfigs gameConfigs = new GameConfigs();
+        gameConfigs.setButtonArray(buttonArray);
+        gameConfigs.newGame();
 
         ActionListener listener = new ActionListener() {
             @Override
@@ -43,6 +46,7 @@ public class TheGrid extends JFrame {
                 buttonPos = getClickedButton(buttonPos);
                 setAllFalse();
                 changeButton(buttonPos);
+                System.out.println(e.getActionCommand());
 
             }
         };
