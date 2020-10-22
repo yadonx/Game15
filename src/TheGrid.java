@@ -32,7 +32,6 @@ public class TheGrid extends JFrame {
 
     public TheGrid() {
 
-
         ActionListener listener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
