@@ -132,7 +132,7 @@ public class TheGrid extends JFrame {
             default:
                 break;
         }
-        // test från master
+
     }
 
     private void setAllFalse() {
