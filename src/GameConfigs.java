@@ -26,7 +26,6 @@ public class GameConfigs {
         buttonArray[14].setEnabled(true);
     }
 
-
     private boolean checkIfRandomExist(int lenght, int randomNumber) {
         for (int j = 0; j < lenght; j++) {
             if (buttonArray[j].getText().equalsIgnoreCase(String.valueOf(randomNumber))) {
@@ -46,14 +45,21 @@ public class GameConfigs {
         }
     }
 
-    public void solved(){
+    public void setAllFalse() {
+        for (JButton jButton : buttonArray) {
+            jButton.setEnabled(false);
+        }
+    }
+
+    public boolean solved(){
         int count = 0;
         for (int i = 0; i < buttonArray.length - 1; i++) {
             if (buttonArray[i].getText().equalsIgnoreCase(String.valueOf(i+1)))
                 count++;
         }
         if (count == 15)
-            System.out.println("vinst");
+            return true;
+        return false;
     }
 
 }
