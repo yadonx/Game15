@@ -6,7 +6,7 @@ public class Music {
 
     public void addMusic() {
 
-        try (AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(this.getClass().getResource("/music.wav"))) {
+        try (AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(this.getClass().getResource("/files/music.wav"))) {
             clip = AudioSystem.getClip();
             clip.open(audioInputStream);
 

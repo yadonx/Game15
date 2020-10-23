@@ -1,7 +1,7 @@
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-
 /**
  * Created by Emil Johansson, Liliana Montini Pitra, CRIBB CRIBBSSON, Steffe Steffsson
  * Date: 2020-10-21
@@ -48,8 +48,9 @@ public class TheGrid extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 int buttonPos = Integer.parseInt(e.getActionCommand());
                 buttonPos = getClickedButton(buttonPos);
-                setAllFalse();
+                gameConfigs.setAllFalse();
                 changeButton(buttonPos);
+                gameConfigs.solved();
 
             }
         };
@@ -75,7 +76,7 @@ public class TheGrid extends JFrame {
         newGameButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                setAllFalse();
+                gameConfigs.setAllFalse();
                 gameConfigs.newGame();
             }
         });
@@ -166,12 +167,6 @@ public class TheGrid extends JFrame {
                 break;
         }
 
-    }
-
-    private void setAllFalse() {
-        for (int i = 0; i < buttonArray.length; i++) {
-            buttonArray[i].setEnabled(false);
-        }
     }
 
     private int getLastButton() {
