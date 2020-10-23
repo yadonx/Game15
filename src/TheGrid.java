@@ -32,6 +32,7 @@ public class TheGrid extends JFrame {
     private JButton cheatButton;
     private JButton newGameButton;
 
+
     private JButton[] buttonArray = new JButton[]{button1, button2, button3, button4, button5, button6,
             button7, button8, button9, button10, button11, button12, button13, button14, button15, button16};
 
@@ -39,6 +40,8 @@ public class TheGrid extends JFrame {
         GameConfigs gameConfigs = new GameConfigs();
         gameConfigs.setButtonArray(buttonArray);
 
+        Music music = new Music();
+        music.addMusic();
 
         ActionListener listener = new ActionListener() {
             @Override
@@ -63,16 +66,11 @@ public class TheGrid extends JFrame {
         button13.addActionListener(listener);
         button14.addActionListener(listener);
         button10.addActionListener(listener);
-
-
         button11.addActionListener(listener);
         button16.addActionListener(listener);
         button12.addActionListener(listener);
         button8.addActionListener(listener);
-
-
         button15.addActionListener(listener);
-
 
 
         newGameButton.addActionListener(new ActionListener() {
@@ -87,6 +85,18 @@ public class TheGrid extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+            }
+        });
+
+        musicRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (musicRadioButton.isSelected()){
+                    music.startMusic();
+                }
+                else{
+                    music.stopMusic();
+                }
             }
         });
     }
