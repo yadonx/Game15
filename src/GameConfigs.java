@@ -26,7 +26,6 @@ public class GameConfigs {
 
     public void newGame() {
         setAllEmpty();
-        frame.setVisible(false);
         for (int i = 0; i < buttonArray.length - 1; i++) {
             while (buttonArray[i].getText().isEmpty()) {
                 int randomNumber = random.nextInt(buttonArray.length - 1) + 1;
