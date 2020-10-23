@@ -1,17 +1,32 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 import java.util.Random;
 
 public class GameConfigs {
     private Random random = new Random();
     private JButton[] buttonArray;
+    private JFrame frame = new JFrame();
+    private ImageIcon image = new ImageIcon("src/files/winner.jpg");
+    private JLabel popUp = new JLabel(image);
 
+    public GameConfigs(){
+        frame.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusLost(FocusEvent e) {
+                super.focusLost(e);
+                frame.setVisible(false);
+            }
+        });
+    }
     public void setButtonArray(JButton[] array) {
         buttonArray = array;
     }
 
     public void newGame() {
         setAllEmpty();
+        frame.setVisible(false);
         for (int i = 0; i < buttonArray.length - 1; i++) {
             while (buttonArray[i].getText().isEmpty()) {
                 int randomNumber = random.nextInt(buttonArray.length - 1) + 1;
@@ -51,6 +66,11 @@ public class GameConfigs {
         }
     }
 
+    private void setAllBlack(){
+        for (JButton jButton : buttonArray)
+            jButton.setBackground(Color.BLACK);
+    } // tar nog bort
+
     public boolean solved(){
         int count = 0;
         for (int i = 0; i < buttonArray.length - 1; i++) {
@@ -59,5 +79,15 @@ public class GameConfigs {
         }
         return count == 15;
     }
+
+    public void winningScreen() {
+        setAllFalse();
+        frame.setUndecorated(true);
+        frame.getContentPane().add(popUp);
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+    }
+
 
 }
