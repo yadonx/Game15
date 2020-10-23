@@ -12,6 +12,10 @@ public class GameConfigs {
     private JLabel popUp = new JLabel(image);
 
     public GameConfigs(){
+        frame.setUndecorated(true);
+        frame.getContentPane().add(popUp);
+        frame.pack();
+        frame.setLocationRelativeTo(null);
         frame.addFocusListener(new FocusAdapter() {
             @Override
             public void focusLost(FocusEvent e) {
@@ -65,11 +69,6 @@ public class GameConfigs {
         }
     }
 
-    private void setAllBlack(){
-        for (JButton jButton : buttonArray)
-            jButton.setBackground(Color.BLACK);
-    } // tar nog bort
-
     public boolean solved(){
         int count = 0;
         for (int i = 0; i < buttonArray.length - 1; i++) {
@@ -80,11 +79,6 @@ public class GameConfigs {
     }
 
     public void winningScreen() {
-        setAllFalse();
-        frame.setUndecorated(true);
-        frame.getContentPane().add(popUp);
-        frame.pack();
-        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 
