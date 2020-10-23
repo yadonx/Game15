@@ -46,4 +46,14 @@ public class GameConfigs {
         }
     }
 
+    public void solved(){
+        int count = 0;
+        for (int i = 0; i < buttonArray.length - 1; i++) {
+            if (buttonArray[i].getText().equalsIgnoreCase(String.valueOf(i+1)))
+                count++;
+        }
+        if (count == 15)
+            System.out.println("vinst");
+    }
+
 }
