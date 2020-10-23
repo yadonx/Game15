@@ -1,1 +1,2 @@
 //TODO fixa fast form på knapparna
+//TODO fixa vad som händer när man vinner

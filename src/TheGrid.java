@@ -50,8 +50,10 @@ public class TheGrid extends JFrame {
                 buttonPos = getClickedButton(buttonPos);
                 gameConfigs.setAllFalse();
                 changeButton(buttonPos);
-                gameConfigs.solved();
-
+                if (gameConfigs.solved()){
+                    System.out.println("bitch");
+                    JOptionPane.showMessageDialog(null, "Du vann");
+                }
             }
         };
 
@@ -71,6 +73,7 @@ public class TheGrid extends JFrame {
         button12.addActionListener(listener);
         button8.addActionListener(listener);
         button15.addActionListener(listener);
+
 
 
         newGameButton.addActionListener(new ActionListener() {

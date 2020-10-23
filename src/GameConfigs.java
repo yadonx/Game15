@@ -57,9 +57,6 @@ public class GameConfigs {
             if (buttonArray[i].getText().equalsIgnoreCase(String.valueOf(i+1)))
                 count++;
         }
-        if (count == 15)
-            return true;
-        return false;
+        return count == 15;
     }
-
 }
