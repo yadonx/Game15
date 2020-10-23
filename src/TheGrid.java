@@ -1,9 +1,9 @@
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-
 /**
- * Created by Emil Johansson
+ * Created by Emil Johansson, Liliana Montini Pitra, CRIBB CRIBBSSON, Steffe Steffsson
  * Date: 2020-10-21
  * Time: 18:11
  * Project: Game15
@@ -28,40 +28,76 @@ public class TheGrid extends JFrame {
     private JButton button15;
     private JButton button16;
     private JPanel grid2;
+    private JRadioButton musicRadioButton;
+    private JButton cheatButton;
+    private JButton newGameButton;
+
 
     private JButton[] buttonArray = new JButton[]{button1, button2, button3, button4, button5, button6,
             button7, button8, button9, button10, button11, button12, button13, button14, button15, button16};
 
     public TheGrid() {
+        GameConfigs gameConfigs = new GameConfigs();
+        gameConfigs.setButtonArray(buttonArray);
+
+        Music music = new Music();
+        music.addMusic();
 
         ActionListener listener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int buttonPos = Integer.parseInt(e.getActionCommand());
                 buttonPos = getClickedButton(buttonPos);
-                setAllFalse();
+                gameConfigs.setAllFalse();
                 changeButton(buttonPos);
+                gameConfigs.solved();
 
             }
         };
 
         button1.addActionListener(listener);
         button2.addActionListener(listener);
+        button3.addActionListener(listener);
+        button4.addActionListener(listener);
+        button5.addActionListener(listener);
+        button6.addActionListener(listener);
+        button7.addActionListener(listener);
         button9.addActionListener(listener);
         button13.addActionListener(listener);
         button14.addActionListener(listener);
         button10.addActionListener(listener);
-        button6.addActionListener(listener);
-        button7.addActionListener(listener);
         button11.addActionListener(listener);
         button16.addActionListener(listener);
         button12.addActionListener(listener);
         button8.addActionListener(listener);
-        button3.addActionListener(listener);
-        button4.addActionListener(listener);
         button15.addActionListener(listener);
-        button5.addActionListener(listener);
 
+
+        newGameButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                gameConfigs.setAllFalse();
+                gameConfigs.newGame();
+            }
+        });
+
+        cheatButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            }
+        });
+
+        musicRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (musicRadioButton.isSelected()){
+                    music.startMusic();
+                }
+                else{
+                    music.stopMusic();
+                }
+            }
+        });
     }
 
 
@@ -76,7 +112,6 @@ public class TheGrid extends JFrame {
         int minusOne = pos - 1;
         int addOne = pos + 1;
         int addFour = pos + 4;
-
 
         switch (pos) {
             case 15:
@@ -132,12 +167,6 @@ public class TheGrid extends JFrame {
                 break;
         }
 
-    }
-
-    private void setAllFalse() {
-        for (int i = 0; i < buttonArray.length; i++) {
-            buttonArray[i].setEnabled(false);
-        }
     }
 
     private int getLastButton() {
