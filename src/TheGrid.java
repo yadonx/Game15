@@ -32,9 +32,12 @@ public class TheGrid extends JFrame {
     private JButton cheatButton;
     private JButton newGameButton;
 
+    private JButton[][] buttonArray = new JButton[][]{{button1, button2, button3, button4},
+                                                      {button5, button6, button7, button8},
+                                                      {button9,button10,button11,button12},
+                                                      {button13, button14, button15, button16}};
 
-    private JButton[] buttonArray = new JButton[]{button1, button2, button3, button4, button5, button6,
-            button7, button8, button9, button10, button11, button12, button13, button14, button15, button16};
+
 
     public TheGrid() {
         GameConfigs gameConfigs = new GameConfigs();
@@ -43,15 +46,13 @@ public class TheGrid extends JFrame {
         Music music = new Music();
         music.addMusic();
 
-        ActionListener listener = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int buttonPos = Integer.parseInt(e.getActionCommand());
-                buttonPos = getClickedButton(buttonPos);
-                gameConfigs.setAllFalse();
-                changeButton(buttonPos);
-                gameConfigs.solved();
+        ActionListener listener = e -> {
+            int buttonPos = Integer.parseInt(e.getActionCommand());
 
+            gameConfigs.setAllFalse();
+            gameConfigs.changeButton(buttonPos);
+            if (gameConfigs.solved()){
+                gameConfigs.winningScreen();
             }
         };
 
@@ -73,117 +74,24 @@ public class TheGrid extends JFrame {
         button15.addActionListener(listener);
 
 
-        newGameButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                gameConfigs.setAllFalse();
-                gameConfigs.newGame();
-            }
+        newGameButton.addActionListener(e -> {
+            gameConfigs.setAllFalse();
+            gameConfigs.newGame();
         });
 
-        cheatButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            }
+        cheatButton.addActionListener(e -> {
         });
 
-        musicRadioButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (musicRadioButton.isSelected()){
-                    music.startMusic();
-                }
-                else{
-                    music.stopMusic();
-                }
+        musicRadioButton.addActionListener(e -> {
+            if (musicRadioButton.isSelected()){
+                music.startMusic();
+            }
+            else{
+                music.stopMusic();
             }
         });
     }
 
-
-    private void changeButton(int pos) {
-
-        int oldPos = getLastButton();
-        buttonArray[oldPos].setText(buttonArray[pos].getText());
-        buttonArray[oldPos].setBackground(Color.red);
-        buttonArray[pos].setText("");
-        buttonArray[pos].setBackground(Color.BLACK);
-        int minusFour = pos - 4;
-        int minusOne = pos - 1;
-        int addOne = pos + 1;
-        int addFour = pos + 4;
-
-        switch (pos) {
-            case 15:
-                buttonArray[minusFour].setEnabled(true);
-                buttonArray[minusOne].setEnabled(true);
-                break;
-            case 12:
-                buttonArray[minusFour].setEnabled(true);
-                buttonArray[addOne].setEnabled(true);
-                break;
-            case 0:
-                buttonArray[addOne].setEnabled(true);
-                buttonArray[addFour].setEnabled(true);
-                break;
-            case 3:
-                buttonArray[minusOne].setEnabled(true);
-                buttonArray[addFour].setEnabled(true);
-                break;
-            case 13:
-            case 14:
-                buttonArray[minusOne].setEnabled(true);
-                buttonArray[addOne].setEnabled(true);
-                buttonArray[minusFour].setEnabled(true);
-                break;
-            case 11:
-            case 7:
-                buttonArray[minusOne].setEnabled(true);
-                buttonArray[addFour].setEnabled(true);
-                buttonArray[minusFour].setEnabled(true);
-                break;
-            case 1:
-            case 2:
-                buttonArray[minusOne].setEnabled(true);
-                buttonArray[addFour].setEnabled(true);
-                buttonArray[addOne].setEnabled(true);
-                break;
-            case 8:
-            case 4:
-                buttonArray[minusFour].setEnabled(true);
-                buttonArray[addFour].setEnabled(true);
-                buttonArray[addOne].setEnabled(true);
-                break;
-            case 5:
-            case 6:
-            case 9:
-            case 10:
-                buttonArray[minusFour].setEnabled(true);
-                buttonArray[minusOne].setEnabled(true);
-                buttonArray[addFour].setEnabled(true);
-                buttonArray[addOne].setEnabled(true);
-                break;
-            default:
-                break;
-        }
-
-    }
-
-    private int getLastButton() {
-        for (int i = 0; i < buttonArray.length; i++) {
-            if (buttonArray[i].getText().isEmpty())
-                return i;
-        }
-        return 0;
-    }
-
-    private int getClickedButton(int pos) {
-        for (int i = 0; i < buttonArray.length; i++) {
-            if (buttonArray[i].getText().equalsIgnoreCase(String.valueOf(pos)))
-                return i;
-        }
-        return 0;
-    }
 
     public void run() {
         setContentPane(new TheGrid().grid1);
@@ -192,7 +100,6 @@ public class TheGrid extends JFrame {
         setVisible(true);
         setLocationRelativeTo(null);
         setResizable(false);
-
     }
 
     public static void main(String[] args) {

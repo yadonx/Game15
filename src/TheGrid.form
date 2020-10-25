@@ -34,154 +34,187 @@
         <children>
           <component id="d5cd7" class="javax.swing.JButton" binding="button2">
             <constraints>
-              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="75" height="75"/>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="115" height="115"/>
               </grid>
             </constraints>
             <properties>
               <background color="-524024"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="true"/>
+              <defaultCapable value="true"/>
               <enabled value="false"/>
-              <font name="JetBrains Mono" size="48"/>
+              <font name="Kristen ITC" size="48"/>
               <foreground color="-16777216"/>
               <text value="2"/>
             </properties>
           </component>
           <component id="6d87d" class="javax.swing.JButton" binding="button9">
             <constraints>
-              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="75" height="75"/>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="115" height="115"/>
               </grid>
             </constraints>
             <properties>
               <background color="-524024"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="true"/>
+              <defaultCapable value="true"/>
               <enabled value="false"/>
-              <font name="JetBrains Mono" size="48"/>
+              <font name="Kristen ITC" size="48"/>
               <foreground color="-16777216"/>
               <text value="9"/>
             </properties>
           </component>
           <component id="b82ef" class="javax.swing.JButton" binding="button13">
             <constraints>
-              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="75" height="75"/>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="115" height="115"/>
               </grid>
             </constraints>
             <properties>
               <background color="-524024"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="true"/>
+              <defaultCapable value="true"/>
               <enabled value="false"/>
-              <font name="JetBrains Mono" size="48"/>
+              <font name="Kristen ITC" size="48"/>
               <foreground color="-16777216"/>
               <text value="13"/>
             </properties>
           </component>
           <component id="87888" class="javax.swing.JButton" binding="button14">
             <constraints>
-              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="75" height="75"/>
+              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="115" height="115"/>
               </grid>
             </constraints>
             <properties>
               <background color="-524024"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="true"/>
+              <defaultCapable value="true"/>
               <enabled value="false"/>
-              <font name="JetBrains Mono" size="48"/>
+              <font name="Kristen ITC" size="48"/>
               <foreground color="-16777216"/>
               <text value="14"/>
             </properties>
           </component>
           <component id="5ccca" class="javax.swing.JButton" binding="button10">
             <constraints>
-              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="75" height="75"/>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="115" height="115"/>
               </grid>
             </constraints>
             <properties>
               <background color="-524024"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="true"/>
+              <defaultCapable value="true"/>
               <enabled value="false"/>
-              <font name="JetBrains Mono" size="48"/>
+              <font name="Kristen ITC" size="48"/>
               <foreground color="-16777216"/>
               <text value="10"/>
             </properties>
           </component>
           <component id="8870d" class="javax.swing.JButton" binding="button6">
             <constraints>
-              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="75" height="75"/>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="115" height="115"/>
               </grid>
             </constraints>
             <properties>
               <background color="-524024"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="true"/>
+              <defaultCapable value="true"/>
               <enabled value="false"/>
-              <font name="JetBrains Mono" size="48"/>
+              <font name="Kristen ITC" size="48"/>
               <foreground color="-16777216"/>
               <text value="6"/>
             </properties>
           </component>
           <component id="90196" class="javax.swing.JButton" binding="button7">
             <constraints>
-              <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="75" height="75"/>
+              <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="115" height="115"/>
               </grid>
             </constraints>
             <properties>
               <background color="-524024"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="true"/>
+              <defaultCapable value="true"/>
               <enabled value="false"/>
-              <font name="JetBrains Mono" size="48"/>
+              <font name="Kristen ITC" size="48"/>
               <foreground color="-16777216"/>
               <text value="7"/>
             </properties>
           </component>
           <component id="ba5d6" class="javax.swing.JButton" binding="button11">
             <constraints>
-              <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="75" height="75"/>
+              <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="115" height="115"/>
               </grid>
             </constraints>
             <properties>
               <background color="-524024"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="true"/>
+              <defaultCapable value="true"/>
               <enabled value="false"/>
-              <font name="JetBrains Mono" size="48"/>
+              <font name="Kristen ITC" size="48"/>
               <foreground color="-16777216"/>
               <text value="11"/>
             </properties>
           </component>
           <component id="e1034" class="javax.swing.JButton" binding="button16">
             <constraints>
-              <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="75" height="75"/>
+              <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="115" height="115"/>
               </grid>
             </constraints>
             <properties>
               <background color="-16777216"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="true"/>
+              <defaultCapable value="true"/>
               <enabled value="false"/>
-              <font name="JetBrains Mono" size="48"/>
+              <font name="Kristen ITC" size="48"/>
               <foreground color="-16777216"/>
               <text value=""/>
             </properties>
           </component>
           <component id="7a76a" class="javax.swing.JButton" binding="button12">
             <constraints>
-              <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="75" height="75"/>
+              <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="115" height="115"/>
               </grid>
             </constraints>
             <properties>
               <background color="-524024"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="true"/>
+              <defaultCapable value="true"/>
               <enabled value="true"/>
-              <font name="JetBrains Mono" size="48"/>
+              <font name="Kristen ITC" size="48"/>
               <foreground color="-16777216"/>
               <text value="12"/>
             </properties>
           </component>
           <component id="c8511" class="javax.swing.JButton" binding="button8">
             <constraints>
-              <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="75" height="75"/>
+              <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="115" height="115"/>
               </grid>
             </constraints>
             <properties>
               <background color="-524024"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="true"/>
+              <defaultCapable value="true"/>
               <enabled value="false"/>
-              <font name="JetBrains Mono" size="48"/>
+              <font name="Kristen ITC" size="48"/>
               <foreground color="-16777216"/>
               <hideActionText value="false"/>
               <text value="8"/>
@@ -189,42 +222,51 @@
           </component>
           <component id="11a19" class="javax.swing.JButton" binding="button3">
             <constraints>
-              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="75" height="75"/>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="115" height="115"/>
               </grid>
             </constraints>
             <properties>
               <background color="-524024"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="true"/>
+              <defaultCapable value="true"/>
               <enabled value="false"/>
-              <font name="JetBrains Mono" size="48"/>
+              <font name="Kristen ITC" size="48"/>
               <foreground color="-16777216"/>
               <text value="3"/>
             </properties>
           </component>
           <component id="fd40" class="javax.swing.JButton" binding="button4">
             <constraints>
-              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="75" height="75"/>
+              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="115" height="115"/>
               </grid>
             </constraints>
             <properties>
               <background color="-524024"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="true"/>
+              <defaultCapable value="true"/>
               <enabled value="false"/>
-              <font name="JetBrains Mono" size="48"/>
+              <font name="Kristen ITC" size="48"/>
               <foreground color="-16777216"/>
               <text value="4"/>
             </properties>
           </component>
           <component id="f8b8b" class="javax.swing.JButton" binding="button15">
             <constraints>
-              <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="75" height="75"/>
+              <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="115" height="115"/>
               </grid>
             </constraints>
             <properties>
               <background color="-524024"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="true"/>
+              <defaultCapable value="true"/>
               <enabled value="true"/>
-              <font name="JetBrains Mono" size="48"/>
+              <font name="Kristen ITC" size="48"/>
               <foreground color="-16777216"/>
               <hideActionText value="false"/>
               <text value="15"/>
@@ -232,28 +274,34 @@
           </component>
           <component id="1bb60" class="javax.swing.JButton" binding="button5">
             <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="75" height="75"/>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="115" height="115"/>
               </grid>
             </constraints>
             <properties>
               <background color="-524024"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="true"/>
+              <defaultCapable value="true"/>
               <enabled value="false"/>
-              <font name="JetBrains Mono" size="48"/>
+              <font name="Kristen ITC" size="48"/>
               <foreground color="-16777216"/>
               <text value="5"/>
             </properties>
           </component>
           <component id="e4214" class="javax.swing.JButton" binding="button1">
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="75" height="75"/>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="115" height="115"/>
               </grid>
             </constraints>
             <properties>
               <background color="-524024"/>
+              <borderPainted value="false"/>
+              <contentAreaFilled value="true"/>
+              <defaultCapable value="true"/>
               <enabled value="false"/>
-              <font name="JetBrains Mono" size="48"/>
+              <font name="Kristen ITC" size="48"/>
               <foreground color="-16777216"/>
               <hideActionText value="false"/>
               <text value="1"/>
@@ -268,6 +316,8 @@
         </constraints>
         <properties>
           <background color="-524024"/>
+          <borderPainted value="true"/>
+          <foreground color="-16777216"/>
           <text value="New Game"/>
         </properties>
       </component>
@@ -299,6 +349,8 @@
         </constraints>
         <properties>
           <background color="-524024"/>
+          <borderPainted value="true"/>
+          <foreground color="-16777216"/>
           <text value="Izi mode"/>
         </properties>
       </component>
