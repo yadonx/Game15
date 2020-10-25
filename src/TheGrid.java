@@ -50,7 +50,9 @@ public class TheGrid extends JFrame {
                 buttonPos = getClickedButton(buttonPos);
                 gameConfigs.setAllFalse();
                 changeButton(buttonPos);
-                gameConfigs.solved();
+                if (gameConfigs.solved()){
+                    gameConfigs.winningScreen();
+                }
 
             }
         };

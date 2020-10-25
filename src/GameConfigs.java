@@ -1,11 +1,29 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 import java.util.Random;
 
 public class GameConfigs {
     private Random random = new Random();
     private JButton[] buttonArray;
+    private JFrame frame = new JFrame();
+    private ImageIcon image = new ImageIcon("src/files/winner.jpg");
+    private JLabel popUp = new JLabel(image);
 
+    public GameConfigs(){
+        frame.setUndecorated(true);
+        frame.getContentPane().add(popUp);
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusLost(FocusEvent e) {
+                super.focusLost(e);
+                frame.setVisible(false);
+            }
+        });
+    }
     public void setButtonArray(JButton[] array) {
         buttonArray = array;
     }
@@ -58,6 +76,10 @@ public class GameConfigs {
                 count++;
         }
         return count == 15;
+    }
+
+    public void winningScreen() {
+        frame.setVisible(true);
     }
 
 }
