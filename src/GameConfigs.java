@@ -82,5 +82,4 @@ public class GameConfigs {
         frame.setVisible(true);
     }
 
-
 }

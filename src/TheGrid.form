@@ -316,6 +316,8 @@
         </constraints>
         <properties>
           <background color="-524024"/>
+          <borderPainted value="true"/>
+          <foreground color="-16777216"/>
           <text value="New Game"/>
         </properties>
       </component>
@@ -347,6 +349,8 @@
         </constraints>
         <properties>
           <background color="-524024"/>
+          <borderPainted value="true"/>
+          <foreground color="-16777216"/>
           <text value="Izi mode"/>
         </properties>
       </component>
