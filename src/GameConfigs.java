@@ -101,9 +101,8 @@ public class GameConfigs {
     }
 
     public void changeButton(int pos) {
-        System.out.println(pos);
         setLastButton(pos);
-        setClickedButton(pos);
+        setClickedButton(pos).setText("");
 
 //        int oldPos = getLastButton();
 //        buttonArray[oldPos].setText(buttonArray[pos].getText());
@@ -176,25 +175,24 @@ public class GameConfigs {
             for (int column = 0; column < buttonArray[row].length; column++) {
                 if (buttonArray[row][column].getText().isEmpty()) {
                     buttonArray[row][column].setText(String.valueOf(pos));
-                    System.out.println(buttonArray[row][column].getText());
                     buttonArray[row][column].setBackground(Color.RED);
-                    System.out.println(buttonArray[row][column].getBackground());
                 }
 
             }
         }
+
     }
 
-    private void setClickedButton(int pos) {
+    private JButton setClickedButton(int pos) {
         for (int row = 0; row < buttonArray.length; row++) {
             for (int column = 0; column < buttonArray[row].length; column++) {
                 if (buttonArray[row][column].getText().equalsIgnoreCase(String.valueOf(pos))) {
-                    buttonArray[row][column].setText("");
                     buttonArray[row][column].setBackground(Color.BLACK);
+                    return buttonArray[row][column];
                 }
-
             }
         }
+        return null;
     }
 }
 
