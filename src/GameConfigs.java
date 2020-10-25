@@ -31,10 +31,13 @@ public class GameConfigs {
 
     public void newGame() {
         setAllEmpty();
-        for (int row = 0; row < buttonArray.length - 1; row++) {
+        for (int row = 0; row < buttonArray.length; row++) {
             for (int column = 0; column < buttonArray[row].length; column++) {
                 while (buttonArray[row][column].getText().isEmpty()) {
-                    int randomNumber = random.nextInt(buttonArray.length - 1) + 1;
+                    if (buttonArray[3][3] == buttonArray[row][column]) {
+                        break;
+                    }
+                    int randomNumber = random.nextInt(15) + 1;
                     boolean randomExist = checkIfRandomExist(randomNumber);
                     if (randomExist) {
                         buttonArray[row][column].setText(String.valueOf(randomNumber));
@@ -85,7 +88,7 @@ public class GameConfigs {
         int count2 = 1;
         for (int row = 0; row < buttonArray.length; row++) {
             for (int column = 0; column < buttonArray[row].length; column++) {
-                if (buttonArray[row][column].getText().equalsIgnoreCase(String.valueOf(count2++))){
+                if (buttonArray[row][column].getText().equalsIgnoreCase(String.valueOf(count2++))) {
                     count++;
                 }
             }
@@ -97,4 +100,101 @@ public class GameConfigs {
         frame.setVisible(true);
     }
 
+    public void changeButton(int pos) {
+        System.out.println(pos);
+        setLastButton(pos);
+        setClickedButton(pos);
+
+//        int oldPos = getLastButton();
+//        buttonArray[oldPos].setText(buttonArray[pos].getText());
+//        buttonArray[oldPos].setBackground(Color.red);
+//        buttonArray[pos].setText("");
+//        buttonArray[pos].setBackground(Color.BLACK);
+//        int minusFour = pos - 4;
+//        int minusOne = pos - 1;
+//        int addOne = pos + 1;
+//        int addFour = pos + 4;
+
+//        switch (pos) {
+//            case 15:
+//                buttonArray[minusFour].setEnabled(true);
+//                buttonArray[minusOne].setEnabled(true);
+//                break;
+//            case 12:
+//                buttonArray[minusFour].setEnabled(true);
+//                buttonArray[addOne].setEnabled(true);
+//                break;
+//            case 0:
+//                buttonArray[addOne].setEnabled(true);
+//                buttonArray[addFour].setEnabled(true);
+//                break;
+//            case 3:
+//                buttonArray[minusOne].setEnabled(true);
+//                buttonArray[addFour].setEnabled(true);
+//                break;
+//            case 13:
+//            case 14:
+//                buttonArray[minusOne].setEnabled(true);
+//                buttonArray[addOne].setEnabled(true);
+//                buttonArray[minusFour].setEnabled(true);
+//                break;
+//            case 11:
+//            case 7:
+//                buttonArray[minusOne].setEnabled(true);
+//                buttonArray[addFour].setEnabled(true);
+//                buttonArray[minusFour].setEnabled(true);
+//                break;
+//            case 1:
+//            case 2:
+//                buttonArray[minusOne].setEnabled(true);
+//                buttonArray[addFour].setEnabled(true);
+//                buttonArray[addOne].setEnabled(true);
+//                break;
+//            case 8:
+//            case 4:
+//                buttonArray[minusFour].setEnabled(true);
+//                buttonArray[addFour].setEnabled(true);
+//                buttonArray[addOne].setEnabled(true);
+//                break;
+//            case 5:
+//            case 6:
+//            case 9:
+//            case 10:
+//                buttonArray[minusFour].setEnabled(true);
+//                buttonArray[minusOne].setEnabled(true);
+//                buttonArray[addFour].setEnabled(true);
+//                buttonArray[addOne].setEnabled(true);
+//                break;
+//            default:
+//                break;
+//        }
+
+    }
+
+    private void setLastButton(int pos) {
+        for (int row = 0; row < buttonArray.length; row++) {
+            for (int column = 0; column < buttonArray[row].length; column++) {
+                if (buttonArray[row][column].getText().isEmpty()) {
+                    buttonArray[row][column].setText(String.valueOf(pos));
+                    System.out.println(buttonArray[row][column].getText());
+                    buttonArray[row][column].setBackground(Color.RED);
+                    System.out.println(buttonArray[row][column].getBackground());
+                }
+
+            }
+        }
+    }
+
+    private void setClickedButton(int pos) {
+        for (int row = 0; row < buttonArray.length; row++) {
+            for (int column = 0; column < buttonArray[row].length; column++) {
+                if (buttonArray[row][column].getText().equalsIgnoreCase(String.valueOf(pos))) {
+                    buttonArray[row][column].setText("");
+                    buttonArray[row][column].setBackground(Color.BLACK);
+                }
+
+            }
+        }
+    }
 }
+
