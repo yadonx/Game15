@@ -24,6 +24,7 @@ public class GameConfigs {
             }
         });
     }
+
     public void setButtonArray(JButton[] array) {
         buttonArray = array;
     }
@@ -82,4 +83,8 @@ public class GameConfigs {
         frame.setVisible(true);
     }
 
+    public int resetCounter(JLabel counter){
+        counter.setText("Clicks: 0");
+        return 0;
+    }
 }
