@@ -106,6 +106,7 @@ public class GameConfigs {
         setClickedButton();
 
 
+
 //        int oldPos = getLastButton();
 //        buttonArray[oldPos].setText(buttonArray[pos].getText());
 //        buttonArray[oldPos].setBackground(Color.red);
@@ -202,21 +203,17 @@ public class GameConfigs {
             for (int column = 0; column < buttonArray[row].length; column++) {
                 if (buttonArray[row][column].getText().isEmpty()) {
                     System.out.println(row + " " + column);
-                    try {
-                        if (buttonArray[row - 1][column] != null) {
-                            buttonArray[row - 1][column].setEnabled(true);
-                        }
-                        if (buttonArray[row + 1][column] != null) {
-                            buttonArray[row + 1][column].setEnabled(true);
-                        }
-                        if (buttonArray[row][column - 1] != null) {
-                            buttonArray[row][column - 1].setEnabled(true);
-                        }
-                        if (buttonArray[row][column + 1] != null) {
-                            buttonArray[row][column + 1].setEnabled(true);
-                        }
-                    }catch (ArrayIndexOutOfBoundsException ignored){
-
+                    if (row-1 >= 0) {
+                        buttonArray[row - 1][column].setEnabled(true);
+                    }
+                    if (row+1<=3) {
+                        buttonArray[row + 1][column].setEnabled(true);
+                    }
+                    if (column-1>=0) {
+                        buttonArray[row][column - 1].setEnabled(true);
+                    }
+                    if (column+1<=3) {
+                        buttonArray[row][column + 1].setEnabled(true);
                     }
                 }
 
