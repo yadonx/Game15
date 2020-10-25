@@ -37,8 +37,7 @@ public class TheGrid extends JFrame {
                                                       {button9,button10,button11,button12},
                                                       {button13, button14, button15, button16}};
 
-//    private JButton[] buttonArray = new JButton[]{button1, button2, button3, button4, button5, button6,
-//            button7, button8, button9, button10, button11, button12, button13, button14, button15, button16};
+
 
     public TheGrid() {
         GameConfigs gameConfigs = new GameConfigs();
@@ -47,16 +46,13 @@ public class TheGrid extends JFrame {
         Music music = new Music();
         music.addMusic();
 
-        ActionListener listener = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int buttonPos = Integer.parseInt(e.getActionCommand());
-               // buttonPos = getClickedButton(buttonPos);
-                gameConfigs.setAllFalse();
-                gameConfigs.changeButton(buttonPos);
-                if (gameConfigs.solved()){
-                    gameConfigs.winningScreen();
-                }
+        ActionListener listener = e -> {
+            int buttonPos = Integer.parseInt(e.getActionCommand());
+
+            gameConfigs.setAllFalse();
+            gameConfigs.changeButton(buttonPos);
+            if (gameConfigs.solved()){
+                gameConfigs.winningScreen();
             }
         };
 
@@ -78,29 +74,20 @@ public class TheGrid extends JFrame {
         button15.addActionListener(listener);
 
 
-        newGameButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                gameConfigs.setAllFalse();
-                gameConfigs.newGame();
-            }
+        newGameButton.addActionListener(e -> {
+            gameConfigs.setAllFalse();
+            gameConfigs.newGame();
         });
 
-        cheatButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            }
+        cheatButton.addActionListener(e -> {
         });
 
-        musicRadioButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (musicRadioButton.isSelected()){
-                    music.startMusic();
-                }
-                else{
-                    music.stopMusic();
-                }
+        musicRadioButton.addActionListener(e -> {
+            if (musicRadioButton.isSelected()){
+                music.startMusic();
+            }
+            else{
+                music.stopMusic();
             }
         });
     }
