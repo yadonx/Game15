@@ -10,6 +10,7 @@ import java.awt.event.*;
  * Package: PACKAGE_NAME
  */
 public class TheGrid extends JFrame {
+
     private JPanel grid1;
     private JButton button1;
     private JButton button2;
@@ -39,9 +40,9 @@ public class TheGrid extends JFrame {
     public TheGrid() {
         GameConfigs gameConfigs = new GameConfigs();
         gameConfigs.setButtonArray(buttonArray);
-
         Music music = new Music();
         music.addMusic();
+
 
         ActionListener listener = new ActionListener() {
             @Override
@@ -52,7 +53,7 @@ public class TheGrid extends JFrame {
                 changeButton(buttonPos);
                 if (gameConfigs.solved()){
                     System.out.println("bitch");
-                    JOptionPane.showMessageDialog(null, "Du vann");
+
                 }
             }
         };
@@ -73,7 +74,6 @@ public class TheGrid extends JFrame {
         button12.addActionListener(listener);
         button8.addActionListener(listener);
         button15.addActionListener(listener);
-
 
 
         newGameButton.addActionListener(new ActionListener() {
