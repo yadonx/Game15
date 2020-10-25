@@ -165,7 +165,7 @@ public class GameConfigs {
             }
         }
     }
-}
+
 
 
     public int resetCounter(JLabel counter){
