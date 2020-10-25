@@ -8,7 +8,7 @@ public class GameConfigs {
     private Random random = new Random();
     private JButton[] buttonArray;
     private JFrame frame = new JFrame();
-    private ImageIcon image = new ImageIcon("src/files/winner.jpg");
+    private ImageIcon image = new ImageIcon("src/files/winning.gif");
     private JLabel popUp = new JLabel(image);
 
     public GameConfigs(){
