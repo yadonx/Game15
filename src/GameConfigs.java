@@ -102,7 +102,9 @@ public class GameConfigs {
 
     public void changeButton(int pos) {
         setLastButton(pos);
-        setClickedButton(pos).setText("");
+        getClickedButton(pos).setText("");
+        setClickedButton();
+
 
 //        int oldPos = getLastButton();
 //        buttonArray[oldPos].setText(buttonArray[pos].getText());
@@ -183,7 +185,7 @@ public class GameConfigs {
 
     }
 
-    private JButton setClickedButton(int pos) {
+    private JButton getClickedButton(int pos) {
         for (int row = 0; row < buttonArray.length; row++) {
             for (int column = 0; column < buttonArray[row].length; column++) {
                 if (buttonArray[row][column].getText().equalsIgnoreCase(String.valueOf(pos))) {
@@ -193,6 +195,33 @@ public class GameConfigs {
             }
         }
         return null;
+    }
+
+    private void setClickedButton() {
+        for (int row = 0; row < buttonArray.length; row++) {
+            for (int column = 0; column < buttonArray[row].length; column++) {
+                if (buttonArray[row][column].getText().isEmpty()) {
+                    System.out.println(row + " " + column);
+                    try {
+                        if (buttonArray[row - 1][column] != null) {
+                            buttonArray[row - 1][column].setEnabled(true);
+                        }
+                        if (buttonArray[row + 1][column] != null) {
+                            buttonArray[row + 1][column].setEnabled(true);
+                        }
+                        if (buttonArray[row][column - 1] != null) {
+                            buttonArray[row][column - 1].setEnabled(true);
+                        }
+                        if (buttonArray[row][column + 1] != null) {
+                            buttonArray[row][column + 1].setEnabled(true);
+                        }
+                    }catch (ArrayIndexOutOfBoundsException ignored){
+
+                    }
+                }
+
+            }
+        }
     }
 }
 
