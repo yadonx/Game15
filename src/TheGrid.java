@@ -106,7 +106,6 @@ public class TheGrid extends JFrame {
     }
 
 
-
     public void run() {
         setContentPane(new TheGrid().grid1);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
