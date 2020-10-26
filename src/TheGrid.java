@@ -69,8 +69,8 @@ public class TheGrid extends JFrame {
 
         cheatButton.addActionListener(e -> {
             count = gameConfigs.resetCounter(clickCounter);
-            gameConfigs.cheatButton();
             gameConfigs.setAllFalse();
+            gameConfigs.cheatButton();
         });
 
         musicRadioButton.addActionListener(e -> {
