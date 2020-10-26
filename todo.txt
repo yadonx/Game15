@@ -1,9 +1,16 @@
-Fixa ifsen
+Fixa fast form på knapparna // Fixad
 
-fixa en metodod som skapar en ny knapp av e.getsourse();!!!!
+Fixa ifsen // BORTTAGEN
 
+Fixa en metodod som skapar en ny knapp av e.getsourse();!!!! // BORTTAGEN
 
-Fixa med array knapparna.
+Fixa med array knapparna. // FIXAD
 
+kanske fixa en metod som flyttar den tomma knappen. // FIXAD
 
-kanske fixa en metod som flyttar den tomma knappen.
+Fixa så winning bilden försvinner. // FIXAD
+
+Prova att göra buttonArray till en 2d array.
+Lös switch så det bara 4 case eller gör om till 4 ifs.
+
+Lägg till klick counter // FIXAD
