@@ -11,6 +11,7 @@ public class GameConfigs {
     private ImageIcon image = new ImageIcon("src/files/winning.gif");
     private JLabel popUp = new JLabel(image);
 
+    // Skapar en "pop up" av winning screen
     public GameConfigs() {
         frame.setUndecorated(true);
         frame.getContentPane().add(popUp);
@@ -25,18 +26,21 @@ public class GameConfigs {
         });
     }
 
+    // Länkar med TheGrids array
     public void setButtonArray(JButton[][] array) {
         buttonArray = array;
     }
 
+    // Loopar igenom buttonArray och medan texten är tom på knapparna så ger vi alla knappar en random siffra förutom den sista knappen.
+    // När man hamnar på sista knappen så bryts for loopen.
     public void newGame() {
         setAllEmpty();
         for (int row = 0; row < buttonArray.length; row++) {
             for (int column = 0; column < buttonArray[row].length; column++) {
+                if (buttonArray[3][3] == buttonArray[row][column]) {
+                    break;
+                }
                 while (buttonArray[row][column].getText().isEmpty()) {
-                    if (buttonArray[3][3] == buttonArray[row][column]) {
-                        break;
-                    }
                     int randomNumber = random.nextInt(15) + 1;
                     boolean randomExist = checkIfRandomExist(randomNumber);
                     if (randomExist) {
@@ -50,6 +54,8 @@ public class GameConfigs {
         buttonArray[3][2].setEnabled(true);
     }
 
+    // Loopar igenom buttonArray och kollar ifall våra nya random siffra finns i arrayen eller inte.
+    // Om siffran redan finns returnerar den false annars returnerar den true
     private boolean checkIfRandomExist(int randomNumber) {
         for (int row = 0; row < buttonArray.length; row++) {
             for (int column = 0; column < buttonArray[row].length; column++) {
@@ -63,6 +69,7 @@ public class GameConfigs {
         return true;
     }
 
+    // Loopar igenom buttonArray och sätter alla knappar förutom knapp 16 till en tom text och röd bakgrund
     private void setAllEmpty() {
         for (int row = 0; row < buttonArray.length; row++) {
             for (int column = 0; column < buttonArray[row].length; column++) {
@@ -75,6 +82,7 @@ public class GameConfigs {
 
     }
 
+    // Sätter alla knappar till false
     public void setAllFalse() {
         for (int row = 0; row < buttonArray.length; row++) {
             for (int column = 0; column < buttonArray[row].length; column++) {
@@ -83,12 +91,16 @@ public class GameConfigs {
         }
     }
 
+    // Loopar igenom buttonArray och kollar ifall siffrorna är i rätt ordning
     public boolean solved() {
         int count = 0;
         int count2 = 1;
         for (int row = 0; row < buttonArray.length; row++) {
             for (int column = 0; column < buttonArray[row].length; column++) {
-                if (buttonArray[row][column].getText().equalsIgnoreCase(String.valueOf(count2++))) {
+                if (!buttonArray[row][column].getText().equalsIgnoreCase(String.valueOf(count2++))) {
+                   break;
+                }
+                else {
                     count++;
                 }
             }
@@ -96,18 +108,21 @@ public class GameConfigs {
         return count == 15;
     }
 
+    // Visar vinst gifen
     public void winningScreen() {
         frame.setVisible(true);
     }
 
+    // Tar in siffran som klickades på och byter text/bakgrund på den tomma och den klickade knappen
     public void changeButton(int pos) {
         String newButton = getClickedButton(pos);
         String lastButton = getEmptyButton();
-        updateButtons(pos, newButton);
-        updateButtons(pos, lastButton);
+        updateButtons(pos, newButton);    // Uppdaterar och gör till en tom knapp
+        updateButtons(pos, lastButton);   // Uppdaterar och ger den tomma knappen siffran som man tidigare klickat på
         enableButtons();
     }
 
+    // Byter plats på siffrorna och sätter motsvarande bakgrundsfärg
     private void updateButtons(int pos, String arrayPosition) {
         int row = Integer.parseInt(arrayPosition.substring(0, arrayPosition.indexOf(" ")));
         int column = Integer.parseInt(arrayPosition.substring(arrayPosition.indexOf(" ") + 1));
@@ -120,6 +135,7 @@ public class GameConfigs {
         }
     }
 
+    // Loopar igenom buttonArray och letar efter den knapp som inte har någon text
     private String getEmptyButton() {
         for (int row = 0; row < buttonArray.length; row++) {
             for (int column = 0; column < buttonArray[row].length; column++) {
@@ -131,6 +147,7 @@ public class GameConfigs {
         return null;
     }
 
+    // Loopar igenom buttonArray och kollar vilken knapp(siffra) man klickade på och returnerar vilken position i arrayen knappen är i
     private String getClickedButton(int pos) {
         for (int row = 0; row < buttonArray.length; row++) {
             for (int column = 0; column < buttonArray[row].length; column++) {
@@ -142,6 +159,7 @@ public class GameConfigs {
         return null;
     }
 
+    // Loopar igenom buttonArray och letar efter den tomma knappen och enablar närliggande knappar
     private void enableButtons() {
         for (int row = 0; row < buttonArray.length; row++) {
             for (int column = 0; column < buttonArray[row].length; column++) {
@@ -160,7 +178,6 @@ public class GameConfigs {
                         buttonArray[row][column + 1].setEnabled(true);
                     }
                 }
-
             }
         }
     }

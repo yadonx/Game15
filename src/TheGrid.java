@@ -42,8 +42,9 @@ public class TheGrid extends JFrame {
         Music music = new Music();
         music.addMusic();
 
+        // ActionListener för alla knappar med siffror
         ActionListener gameTileListener = e -> {
-            int buttonPos = Integer.parseInt(e.getActionCommand());
+            int buttonPos = Integer.parseInt(e.getActionCommand()); // Tar texten från knappen som man klickar på och parsar
             gameConfigs.setAllFalse();
             gameConfigs.changeButton(buttonPos);
             if (gameConfigs.solved()){
@@ -53,6 +54,7 @@ public class TheGrid extends JFrame {
             clickCounter.setText("Clicks: " + count);
         };
 
+        // Lägger till actionListener för alla knappar med siffror
         for (int row = 0; row < buttonArray.length; row++) {
             for (int column = 0; column < buttonArray[row].length; column++) {
                 buttonArray[row][column].addActionListener(gameTileListener);
@@ -81,6 +83,7 @@ public class TheGrid extends JFrame {
         });
     }
 
+    // Startar programmet
     public void run() {
         setContentPane(new TheGrid().grid);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -89,6 +92,7 @@ public class TheGrid extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
     }
+
 
     public static void main(String[] args) {
         TheGrid tg = new TheGrid();
