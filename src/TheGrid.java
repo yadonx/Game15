@@ -5,7 +5,6 @@ import java.awt.event.*;
  * Date: 2020-10-21
  * Time: 18:11
  * Project: Game15
- * Package: PACKAGE_NAME
  */
 public class TheGrid extends JFrame {
     private JPanel grid;
