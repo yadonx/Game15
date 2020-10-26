@@ -2,14 +2,13 @@
 import javax.swing.*;
 import java.awt.event.*;
 /**
- * Created by Emil Johansson, Liliana Montini Pitra, CRIBB CRIBBSSON, Steffe Steffsson
+ * Created by Emil Johansson, Liliana Montini Pitra, Christoffer Grännby
  * Date: 2020-10-21
  * Time: 18:11
  * Project: Game15
- * Package: PACKAGE_NAME
  */
 public class TheGrid extends JFrame {
-    private JPanel grid1;
+    private JPanel grid;
     private JButton button1;
     private JButton button2;
     private JButton button4;
@@ -26,12 +25,12 @@ public class TheGrid extends JFrame {
     private JButton button14;
     private JButton button15;
     private JButton button16;
-    private JPanel grid2;
     private JRadioButton musicRadioButton;
     private JButton cheatButton;
     private JButton newGameButton;
     private JLabel counter;
     private JLabel timeCounter;
+    private JLabel clickCounter;
     private int count = 0;
     public int seconds;
     public int minutes;
@@ -41,7 +40,6 @@ public class TheGrid extends JFrame {
                                                       {button5, button6, button7, button8},
                                                       {button9,button10,button11,button12},
                                                       {button13, button14, button15, button16}};
-
 
     public TheGrid() {
         GameConfigs gameConfigs = new GameConfigs();
@@ -68,6 +66,9 @@ public class TheGrid extends JFrame {
         ActionListener listener = e -> {
             int buttonPos = Integer.parseInt(e.getActionCommand());
 
+        // ActionListener för alla knappar med siffror
+        ActionListener gameTileListener = e -> {
+            int buttonPos = Integer.parseInt(e.getActionCommand()); // Tar texten från knappen som man klickar på och parsar
             gameConfigs.setAllFalse();
             gameConfigs.changeButton(buttonPos);
             if (gameConfigs.solved()){
@@ -75,27 +76,27 @@ public class TheGrid extends JFrame {
                 gameConfigs.winningScreen();
             }
             count++;
-            counter.setText("Clicks: " + count);
+            clickCounter.setText("Clicks: " + count);
         };
 
+        // Lägger till actionListener för alla knappar med siffror
         for (int row = 0; row < buttonArray.length; row++) {
             for (int column = 0; column < buttonArray[row].length; column++) {
-                buttonArray[row][column].addActionListener(listener);
+                buttonArray[row][column].addActionListener(gameTileListener);
             }
-
         }
 
         newGameButton.addActionListener(e -> {
             gameConfigs.setAllFalse();
             gameConfigs.newGame();
+            count = gameConfigs.resetClickCounter(clickCounter);
             count = gameConfigs.resetCounter(counter);
             startTimeCounter();
 
         });
 
         cheatButton.addActionListener(e -> {
-            count = gameConfigs.resetCounter(counter);
-            gameConfigs.cheatButton();
+            count = gameConfigs.resetClickCounter(clickCounter);
             gameConfigs.setAllFalse();
             gameConfigs.enableButtons();
 
@@ -117,14 +118,16 @@ public class TheGrid extends JFrame {
         timer.start();
     }
 
+    // Startar programmet
     public void run() {
-        setContentPane(new TheGrid().grid1);
+        setContentPane(new TheGrid().grid);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         pack();
         setVisible(true);
         setLocationRelativeTo(null);
         setResizable(false);
     }
+
 
     public static void main(String[] args) {
         TheGrid tg = new TheGrid();
