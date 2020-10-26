@@ -54,7 +54,7 @@ public class TheGrid extends JFrame {
             String zero = "";
             if (seconds < 59) {
                 seconds++;
-                if (seconds < 10){
+                if (seconds < 10)
                     zero = "0";
                 }
                 else{
@@ -63,7 +63,6 @@ public class TheGrid extends JFrame {
                     minutes++;
                 }
                 timeCounter.setText("Time: " + minutes + ":" + zero + seconds);
-            }
         };
         timer = new Timer(1000,countingTime);
 
