@@ -58,22 +58,12 @@ public class TheGrid extends JFrame {
             counter.setText("Clicks: " + count);
         };
 
-        button1.addActionListener(listener);
-        button2.addActionListener(listener);
-        button3.addActionListener(listener);
-        button4.addActionListener(listener);
-        button5.addActionListener(listener);
-        button6.addActionListener(listener);
-        button7.addActionListener(listener);
-        button9.addActionListener(listener);
-        button13.addActionListener(listener);
-        button14.addActionListener(listener);
-        button10.addActionListener(listener);
-        button11.addActionListener(listener);
-        button16.addActionListener(listener);
-        button12.addActionListener(listener);
-        button8.addActionListener(listener);
-        button15.addActionListener(listener);
+        for (int row = 0; row < buttonArray.length; row++) {
+            for (int column = 0; column < buttonArray[row].length; column++) {
+                buttonArray[row][column].addActionListener(listener);
+            }
+
+        }
 
 
         newGameButton.addActionListener(e -> {
@@ -84,6 +74,9 @@ public class TheGrid extends JFrame {
 
         cheatButton.addActionListener(e -> {
             count = gameConfigs.resetCounter(counter);
+            gameConfigs.cheatButton();
+            gameConfigs.setAllFalse();
+            gameConfigs.enableButtons();
         });
 
         musicRadioButton.addActionListener(e -> {
