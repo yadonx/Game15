@@ -102,6 +102,5 @@ public class TheGrid extends JFrame {
     public static void main(String[] args) {
         TheGrid tg = new TheGrid();
         tg.run();
-
     }
 }

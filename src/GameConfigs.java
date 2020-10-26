@@ -167,16 +167,17 @@ public class GameConfigs {
     }
 
 
-
     public int resetCounter(JLabel counter){
         counter.setText("Clicks: 0");
         return 0;
     }
+
     public void cheatButton (){
         int counter = 1;
         for (int row = 0; row < buttonArray.length; row++) {
             for (int column = 0; column < buttonArray[row].length ; column++) {
                 buttonArray[row][column].setText(String.valueOf(counter++));
+                buttonArray[row][column].setBackground(Color.RED);
             }
         }
         buttonArray[3][3].setText("15");
