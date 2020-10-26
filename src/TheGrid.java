@@ -64,11 +64,11 @@ public class TheGrid extends JFrame {
         newGameButton.addActionListener(e -> {
             gameConfigs.setAllFalse();
             gameConfigs.newGame();
-            count = gameConfigs.resetCounter(clickCounter);
+            count = gameConfigs.resetClickCounter(clickCounter);
         });
 
         cheatButton.addActionListener(e -> {
-            count = gameConfigs.resetCounter(clickCounter);
+            count = gameConfigs.resetClickCounter(clickCounter);
             gameConfigs.setAllFalse();
             gameConfigs.cheatButton();
         });

@@ -182,11 +182,13 @@ public class GameConfigs {
         }
     }
 
-    public int resetCounter(JLabel counter){
+    // Ställer klick räknaren till 0
+    public int resetClickCounter(JLabel counter){
         counter.setText("Clicks: 0");
         return 0;
     }
 
+    // Sätter alla siffror i ordning så att man kan vinna genom att flytta på knapp 15
     public void cheatButton (){
         int counter = 1;
         for (int row = 0; row < buttonArray.length; row++) {
