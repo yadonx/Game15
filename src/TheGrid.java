@@ -27,7 +27,6 @@ public class TheGrid extends JFrame {
     private JButton button14;
     private JButton button15;
     private JButton button16;
-    private JPanel grid2;
     private JRadioButton musicRadioButton;
     private JButton cheatButton;
     private JButton newGameButton;
