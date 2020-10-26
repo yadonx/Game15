@@ -36,7 +36,7 @@ public class TheGrid extends JFrame {
     private int count = 0;
     private int seconds;
     private int minutes;
-    Timer timer;
+    private Timer timer;
 
     private JButton[][] buttonArray = new JButton[][]{{button1, button2, button3, button4},
                                                       {button5, button6, button7, button8},
@@ -49,6 +49,23 @@ public class TheGrid extends JFrame {
         gameConfigs.setButtonArray(buttonArray);
         Music music = new Music();
         music.addMusic();
+
+        ActionListener countingTime = e -> {
+            String zero = "";
+            if (seconds < 59) {
+                seconds++;
+                if (seconds < 10){
+                    zero = "0";
+                }
+                else{
+                    zero = "0";
+                    seconds = 0;
+                    minutes++;
+                }
+                timeCounter.setText("Time: " + minutes + ":" + zero + seconds);
+            }
+        };
+        timer = new Timer(1000,countingTime);
 
         ActionListener listener = e -> {
             int buttonPos = Integer.parseInt(e.getActionCommand());
@@ -74,7 +91,7 @@ public class TheGrid extends JFrame {
             gameConfigs.setAllFalse();
             gameConfigs.newGame();
             count = gameConfigs.resetCounter(counter);
-            countingTime();
+            startTimeCounter();
         });
 
         cheatButton.addActionListener(e -> {
@@ -93,23 +110,9 @@ public class TheGrid extends JFrame {
             }
         });
     }
-    private void countingTime () {
-        ActionListener countingTime = e -> {
-            String zero = "";
-            if (seconds < 59) {
-                seconds++;
-                if (seconds < 10){
-                    zero = "0";
-                }
-                else{
-                    zero = "0";
-                    seconds = 0;
-                    minutes++;
-                }
-                timeCounter.setText("Tid: " + minutes + ":" + zero + seconds);
-            }
-        };
-        timer = new Timer(1000,countingTime);
+    private void startTimeCounter () {
+
+
         timer.start();
     }
 
