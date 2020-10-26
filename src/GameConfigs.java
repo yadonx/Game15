@@ -72,7 +72,6 @@ public class GameConfigs {
             }
         }
         buttonArray[3][3].setBackground(Color.BLACK);
-
     }
 
     public void setAllFalse() {
@@ -131,7 +130,6 @@ public class GameConfigs {
         return null;
     }
 
-
     private String getClickedButton(int pos) {
         for (int row = 0; row < buttonArray.length; row++) {
             for (int column = 0; column < buttonArray[row].length; column++) {
@@ -161,12 +159,9 @@ public class GameConfigs {
                         buttonArray[row][column + 1].setEnabled(true);
                     }
                 }
-
             }
         }
     }
-
-
 
     public int resetCounter(JLabel counter){
         counter.setText("Clicks: 0");
@@ -184,25 +179,4 @@ public class GameConfigs {
         buttonArray[3][2].setText("");
         buttonArray[3][2].setBackground(Color.black);
     }
-    /*
-    private void countingTime (JLabel counter) {
-            String zero = "";
-            if (seconds < 59) {
-                seconds++;
-                if (seconds < 10){
-                    zero = "0";
-                }
-                else{
-                    zero = "0";
-                    seconds = 0;
-                    minutes++;
-                }
-                counter.setText("Tid: " + minutes + ":" + zero + seconds);
-            }
-        };
-        Timer timer = new Timer(1000,countingTime);
-        timer.start();
-    }
-
-     */
 }

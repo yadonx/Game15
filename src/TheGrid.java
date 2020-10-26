@@ -110,6 +110,7 @@ public class TheGrid extends JFrame {
             }
         });
     }
+
     private void startTimeCounter () {
         seconds = 0;
         minutes = 0;
@@ -128,6 +129,5 @@ public class TheGrid extends JFrame {
     public static void main(String[] args) {
         TheGrid tg = new TheGrid();
         tg.run();
-
     }
 }
