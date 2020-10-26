@@ -1,6 +1,5 @@
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.*;
 /**
  * Created by Emil Johansson, Liliana Montini Pitra, CRIBB CRIBBSSON, Steffe Steffsson
@@ -34,8 +33,8 @@ public class TheGrid extends JFrame {
     private JLabel counter;
     private JLabel timeCounter;
     private int count = 0;
-    private int seconds;
-    private int minutes;
+    public int seconds;
+    public int minutes;
     private Timer timer;
 
     private JButton[][] buttonArray = new JButton[][]{{button1, button2, button3, button4},
@@ -72,6 +71,7 @@ public class TheGrid extends JFrame {
             gameConfigs.setAllFalse();
             gameConfigs.changeButton(buttonPos);
             if (gameConfigs.solved()){
+                timer.stop();
                 gameConfigs.winningScreen();
             }
             count++;
@@ -85,12 +85,12 @@ public class TheGrid extends JFrame {
 
         }
 
-
         newGameButton.addActionListener(e -> {
             gameConfigs.setAllFalse();
             gameConfigs.newGame();
             count = gameConfigs.resetCounter(counter);
             startTimeCounter();
+
         });
 
         cheatButton.addActionListener(e -> {
@@ -98,6 +98,7 @@ public class TheGrid extends JFrame {
             gameConfigs.cheatButton();
             gameConfigs.setAllFalse();
             gameConfigs.enableButtons();
+
         });
 
         musicRadioButton.addActionListener(e -> {
@@ -110,11 +111,10 @@ public class TheGrid extends JFrame {
         });
     }
     private void startTimeCounter () {
-
-
+        seconds = 0;
+        minutes = 0;
         timer.start();
     }
-
 
     public void run() {
         setContentPane(new TheGrid().grid1);

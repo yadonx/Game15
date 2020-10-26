@@ -10,9 +10,6 @@ public class GameConfigs {
     private JFrame frame = new JFrame();
     private ImageIcon image = new ImageIcon("src/files/winning.gif");
     private JLabel popUp = new JLabel(image);
-    private int seconds;
-    private int minutes;
-    private JLabel counter;
 
     public GameConfigs() {
         frame.setUndecorated(true);
