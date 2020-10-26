@@ -28,7 +28,7 @@ public class TheGrid extends JFrame {
     private JRadioButton musicRadioButton;
     private JButton cheatButton;
     private JButton newGameButton;
-    private JLabel counter;
+    private JLabel clickCounter;
     private int count = 0;
 
     private JButton[][] buttonArray = new JButton[][]{{button1, button2, button3, button4},
@@ -52,7 +52,7 @@ public class TheGrid extends JFrame {
                 gameConfigs.winningScreen();
             }
             count++;
-            counter.setText("Clicks: " + count);
+            clickCounter.setText("Clicks: " + count);
         };
 
         for (int row = 0; row < buttonArray.length; row++) {
@@ -66,11 +66,11 @@ public class TheGrid extends JFrame {
         newGameButton.addActionListener(e -> {
             gameConfigs.setAllFalse();
             gameConfigs.newGame();
-            count = gameConfigs.resetCounter(counter);
+            count = gameConfigs.resetCounter(clickCounter);
         });
 
         cheatButton.addActionListener(e -> {
-            count = gameConfigs.resetCounter(counter);
+            count = gameConfigs.resetCounter(clickCounter);
             gameConfigs.cheatButton();
             gameConfigs.setAllFalse();
         });
