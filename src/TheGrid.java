@@ -32,7 +32,11 @@ public class TheGrid extends JFrame {
     private JButton cheatButton;
     private JButton newGameButton;
     private JLabel counter;
+    private JLabel timeCounter;
     private int count = 0;
+    private int seconds;
+    private int minutes;
+    Timer timer;
 
     private JButton[][] buttonArray = new JButton[][]{{button1, button2, button3, button4},
                                                       {button5, button6, button7, button8},
@@ -70,6 +74,7 @@ public class TheGrid extends JFrame {
             gameConfigs.setAllFalse();
             gameConfigs.newGame();
             count = gameConfigs.resetCounter(counter);
+            countingTime();
         });
 
         cheatButton.addActionListener(e -> {
@@ -87,6 +92,25 @@ public class TheGrid extends JFrame {
                 music.stopMusic();
             }
         });
+    }
+    private void countingTime () {
+        ActionListener countingTime = e -> {
+            String zero = "";
+            if (seconds < 59) {
+                seconds++;
+                if (seconds < 10){
+                    zero = "0";
+                }
+                else{
+                    zero = "0";
+                    seconds = 0;
+                    minutes++;
+                }
+                timeCounter.setText("Tid: " + minutes + ":" + zero + seconds);
+            }
+        };
+        timer = new Timer(1000,countingTime);
+        timer.start();
     }
 
 

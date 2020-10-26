@@ -10,6 +10,9 @@ public class GameConfigs {
     private JFrame frame = new JFrame();
     private ImageIcon image = new ImageIcon("src/files/winning.gif");
     private JLabel popUp = new JLabel(image);
+    private int seconds;
+    private int minutes;
+    private JLabel counter;
 
     public GameConfigs() {
         frame.setUndecorated(true);
@@ -184,4 +187,25 @@ public class GameConfigs {
         buttonArray[3][2].setText("");
         buttonArray[3][2].setBackground(Color.black);
     }
+    /*
+    private void countingTime (JLabel counter) {
+            String zero = "";
+            if (seconds < 59) {
+                seconds++;
+                if (seconds < 10){
+                    zero = "0";
+                }
+                else{
+                    zero = "0";
+                    seconds = 0;
+                    minutes++;
+                }
+                counter.setText("Tid: " + minutes + ":" + zero + seconds);
+            }
+        };
+        Timer timer = new Timer(1000,countingTime);
+        timer.start();
+    }
+
+     */
 }
