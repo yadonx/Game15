@@ -1,16 +1,14 @@
-
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.*;
 /**
- * Created by Emil Johansson, Liliana Montini Pitra, CRIBB CRIBBSSON, Steffe Steffsson
+ * Created by Emil Johansson, Liliana Montini Pitra, Christoffer Grännby
  * Date: 2020-10-21
  * Time: 18:11
  * Project: Game15
  * Package: PACKAGE_NAME
  */
 public class TheGrid extends JFrame {
-    private JPanel grid1;
+    private JPanel grid;
     private JButton button1;
     private JButton button2;
     private JButton button4;
@@ -27,11 +25,10 @@ public class TheGrid extends JFrame {
     private JButton button14;
     private JButton button15;
     private JButton button16;
-    private JPanel grid2;
     private JRadioButton musicRadioButton;
     private JButton cheatButton;
     private JButton newGameButton;
-    private JLabel counter;
+    private JLabel clickCounter;
     private int count = 0;
 
     private JButton[][] buttonArray = new JButton[][]{{button1, button2, button3, button4},
@@ -53,35 +50,27 @@ public class TheGrid extends JFrame {
                 gameConfigs.winningScreen();
             }
             count++;
-            counter.setText("Clicks: " + count);
+            clickCounter.setText("Clicks: " + count);
         };
 
-        button1.addActionListener(listener);
-        button2.addActionListener(listener);
-        button3.addActionListener(listener);
-        button4.addActionListener(listener);
-        button5.addActionListener(listener);
-        button6.addActionListener(listener);
-        button7.addActionListener(listener);
-        button9.addActionListener(listener);
-        button13.addActionListener(listener);
-        button14.addActionListener(listener);
-        button10.addActionListener(listener);
-        button11.addActionListener(listener);
-        button16.addActionListener(listener);
-        button12.addActionListener(listener);
-        button8.addActionListener(listener);
-        button15.addActionListener(listener);
+        for (int row = 0; row < buttonArray.length; row++) {
+            for (int column = 0; column < buttonArray[row].length; column++) {
+                buttonArray[row][column].addActionListener(listener);
+            }
+
+        }
 
 
         newGameButton.addActionListener(e -> {
             gameConfigs.setAllFalse();
             gameConfigs.newGame();
-            count = gameConfigs.resetCounter(counter);
+            count = gameConfigs.resetCounter(clickCounter);
         });
 
         cheatButton.addActionListener(e -> {
-            count = gameConfigs.resetCounter(counter);
+            count = gameConfigs.resetCounter(clickCounter);
+            gameConfigs.cheatButton();
+            gameConfigs.setAllFalse();
         });
 
         musicRadioButton.addActionListener(e -> {
@@ -95,7 +84,7 @@ public class TheGrid extends JFrame {
     }
 
     public void run() {
-        setContentPane(new TheGrid().grid1);
+        setContentPane(new TheGrid().grid);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         pack();
         setVisible(true);
@@ -106,6 +95,5 @@ public class TheGrid extends JFrame {
     public static void main(String[] args) {
         TheGrid tg = new TheGrid();
         tg.run();
-
     }
 }
