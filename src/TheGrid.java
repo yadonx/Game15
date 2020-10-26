@@ -28,7 +28,6 @@ public class TheGrid extends JFrame {
     private JRadioButton musicRadioButton;
     private JButton cheatButton;
     private JButton newGameButton;
-    private JLabel counter;
     private JLabel timeCounter;
     private JLabel clickCounter;
     private int count = 0;
@@ -53,25 +52,21 @@ public class TheGrid extends JFrame {
                 seconds++;
                 if (seconds < 10)
                     zero = "0";
-                }
-                else{
-                    zero = "0";
-                    seconds = 0;
-                    minutes++;
-                }
-                timeCounter.setText("Time: " + minutes + ":" + zero + seconds);
+            } else {
+                zero = "0";
+                seconds = 0;
+                minutes++;
+            }
+            timeCounter.setText("Time: " + minutes + ":" + zero + seconds);
         };
-        timer = new Timer(1000,countingTime);
-
-        ActionListener listener = e -> {
-            int buttonPos = Integer.parseInt(e.getActionCommand());
+        timer = new Timer(1000, countingTime);
 
         // ActionListener för alla knappar med siffror
         ActionListener gameTileListener = e -> {
             int buttonPos = Integer.parseInt(e.getActionCommand()); // Tar texten från knappen som man klickar på och parsar
             gameConfigs.setAllFalse();
             gameConfigs.changeButton(buttonPos);
-            if (gameConfigs.solved()){
+            if (gameConfigs.solved()) {
                 timer.stop();
                 gameConfigs.winningScreen();
             }
@@ -90,7 +85,7 @@ public class TheGrid extends JFrame {
             gameConfigs.setAllFalse();
             gameConfigs.newGame();
             count = gameConfigs.resetClickCounter(clickCounter);
-            count = gameConfigs.resetCounter(counter);
+            count = gameConfigs.resetClickCounter(clickCounter);
             startTimeCounter();
 
         });
@@ -98,21 +93,20 @@ public class TheGrid extends JFrame {
         cheatButton.addActionListener(e -> {
             count = gameConfigs.resetClickCounter(clickCounter);
             gameConfigs.setAllFalse();
-            gameConfigs.enableButtons();
+            gameConfigs.cheatButton();
 
         });
 
         musicRadioButton.addActionListener(e -> {
-            if (musicRadioButton.isSelected()){
+            if (musicRadioButton.isSelected()) {
                 music.startMusic();
-            }
-            else{
+            } else {
                 music.stopMusic();
             }
         });
     }
 
-    private void startTimeCounter () {
+    private void startTimeCounter (){
         seconds = 0;
         minutes = 0;
         timer.start();
