@@ -1,16 +1,14 @@
-
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.*;
 /**
- * Created by Emil Johansson, Liliana Montini Pitra, CRIBB CRIBBSSON, Steffe Steffsson
+ * Created by Emil Johansson, Liliana Montini Pitra, Christoffer Grännby
  * Date: 2020-10-21
  * Time: 18:11
  * Project: Game15
  * Package: PACKAGE_NAME
  */
 public class TheGrid extends JFrame {
-    private JPanel grid1;
+    private JPanel grid;
     private JButton button1;
     private JButton button2;
     private JButton button4;
@@ -89,7 +87,7 @@ public class TheGrid extends JFrame {
 
 
     public void run() {
-        setContentPane(new TheGrid().grid1);
+        setContentPane(new TheGrid().grid);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         pack();
         setVisible(true);
