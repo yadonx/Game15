@@ -42,7 +42,7 @@ public class TheGrid extends JFrame {
         Music music = new Music();
         music.addMusic();
 
-        ActionListener listener = e -> {
+        ActionListener gameTileListener = e -> {
             int buttonPos = Integer.parseInt(e.getActionCommand());
             gameConfigs.setAllFalse();
             gameConfigs.changeButton(buttonPos);
@@ -55,9 +55,8 @@ public class TheGrid extends JFrame {
 
         for (int row = 0; row < buttonArray.length; row++) {
             for (int column = 0; column < buttonArray[row].length; column++) {
-                buttonArray[row][column].addActionListener(listener);
+                buttonArray[row][column].addActionListener(gameTileListener);
             }
-
         }
 
         newGameButton.addActionListener(e -> {
