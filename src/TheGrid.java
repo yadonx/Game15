@@ -39,7 +39,6 @@ public class TheGrid extends JFrame {
                                                       {button9,button10,button11,button12},
                                                       {button13, button14, button15, button16}};
 
-
     public TheGrid() {
         GameConfigs gameConfigs = new GameConfigs();
         gameConfigs.setButtonArray(buttonArray);
@@ -48,7 +47,6 @@ public class TheGrid extends JFrame {
 
         ActionListener listener = e -> {
             int buttonPos = Integer.parseInt(e.getActionCommand());
-
             gameConfigs.setAllFalse();
             gameConfigs.changeButton(buttonPos);
             if (gameConfigs.solved()){
@@ -95,7 +93,6 @@ public class TheGrid extends JFrame {
             }
         });
     }
-
 
     public void run() {
         setContentPane(new TheGrid().grid1);

@@ -131,7 +131,6 @@ public class GameConfigs {
         return null;
     }
 
-
     private String getClickedButton(int pos) {
         for (int row = 0; row < buttonArray.length; row++) {
             for (int column = 0; column < buttonArray[row].length; column++) {
@@ -165,8 +164,6 @@ public class GameConfigs {
             }
         }
     }
-
-
 
     public int resetCounter(JLabel counter){
         counter.setText("Clicks: 0");
