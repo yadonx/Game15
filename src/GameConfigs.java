@@ -183,5 +183,5 @@ public class GameConfigs {
         buttonArray[3][3].setBackground(Color.red);
         buttonArray[3][2].setText("");
         buttonArray[3][2].setBackground(Color.black);
-}
     }
+}
