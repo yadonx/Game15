@@ -1,3 +1,4 @@
+
 import javax.swing.*;
 import java.awt.event.*;
 /**
@@ -27,8 +28,12 @@ public class TheGrid extends JFrame {
     private JRadioButton musicRadioButton;
     private JButton cheatButton;
     private JButton newGameButton;
+    private JLabel timeCounter;
     private JLabel clickCounter;
     private int count = 0;
+    public int seconds;
+    public int minutes;
+    private Timer timer;
 
     private JButton[][] buttonArray = new JButton[][]{{button1, button2, button3, button4},
                                                       {button5, button6, button7, button8},
@@ -46,7 +51,8 @@ public class TheGrid extends JFrame {
             int buttonPos = Integer.parseInt(e.getActionCommand()); // Tar texten från knappen som man klickar på och parsar
             gameConfigs.setAllFalse();
             gameConfigs.changeButton(buttonPos);
-            if (gameConfigs.solved()){
+            if (gameConfigs.solved()) {
+                timer.stop();
                 gameConfigs.winningScreen();
             }
             count++;
@@ -60,26 +66,53 @@ public class TheGrid extends JFrame {
             }
         }
 
+
+
         newGameButton.addActionListener(e -> {
             gameConfigs.setAllFalse();
             gameConfigs.newGame();
             count = gameConfigs.resetClickCounter(clickCounter);
+            startTimeCounter();
+
         });
 
         cheatButton.addActionListener(e -> {
             count = gameConfigs.resetClickCounter(clickCounter);
             gameConfigs.setAllFalse();
             gameConfigs.cheatButton();
+
         });
 
         musicRadioButton.addActionListener(e -> {
-            if (musicRadioButton.isSelected()){
+            if (musicRadioButton.isSelected()) {
                 music.startMusic();
-            }
-            else{
+            } else {
                 music.stopMusic();
             }
         });
+
+        // Tidräknare för spelad tid
+        ActionListener countingTime = e -> {
+            String zero = "";
+            if (seconds < 59) {
+                seconds++;
+                if (seconds < 10)
+                    zero = "0";
+            } else {
+                zero = "0";
+                seconds = 0;
+                minutes++;
+            }
+            timeCounter.setText("Time: " + minutes + ":" + zero + seconds);
+        };
+        timer = new Timer(1000, countingTime);
+    }
+
+    // Startmetod för tidräknaren
+    private void startTimeCounter (){
+        seconds = 0;
+        minutes = 0;
+        timer.start();
     }
 
     // Startar programmet
