@@ -72,7 +72,6 @@ public class TheGrid extends JFrame {
             gameConfigs.setAllFalse();
             gameConfigs.newGame();
             count = gameConfigs.resetClickCounter(clickCounter);
-            count = gameConfigs.resetClickCounter(clickCounter);
             startTimeCounter();
 
         });
