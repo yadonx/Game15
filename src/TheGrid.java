@@ -46,6 +46,7 @@ public class TheGrid extends JFrame {
         Music music = new Music();
         music.addMusic();
 
+        // Tidräknare för spelad tid
         ActionListener countingTime = e -> {
             String zero = "";
             if (seconds < 59) {
@@ -106,6 +107,7 @@ public class TheGrid extends JFrame {
         });
     }
 
+    // Startmetod för tidräknaren
     private void startTimeCounter (){
         seconds = 0;
         minutes = 0;

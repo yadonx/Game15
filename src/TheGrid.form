@@ -403,7 +403,7 @@
             <properties>
               <font name="Kristen ITC" size="20"/>
               <foreground color="-524024"/>
-              <text value="Time: "/>
+              <text value="Time: 0:00"/>
             </properties>
           </component>
         </children>
