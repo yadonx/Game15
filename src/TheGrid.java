@@ -46,22 +46,6 @@ public class TheGrid extends JFrame {
         Music music = new Music();
         music.addMusic();
 
-        // Tidräknare för spelad tid
-        ActionListener countingTime = e -> {
-            String zero = "";
-            if (seconds < 59) {
-                seconds++;
-                if (seconds < 10)
-                    zero = "0";
-            } else {
-                zero = "0";
-                seconds = 0;
-                minutes++;
-            }
-            timeCounter.setText("Time: " + minutes + ":" + zero + seconds);
-        };
-        timer = new Timer(1000, countingTime);
-
         // ActionListener för alla knappar med siffror
         ActionListener gameTileListener = e -> {
             int buttonPos = Integer.parseInt(e.getActionCommand()); // Tar texten från knappen som man klickar på och parsar
@@ -81,6 +65,8 @@ public class TheGrid extends JFrame {
                 buttonArray[row][column].addActionListener(gameTileListener);
             }
         }
+
+
 
         newGameButton.addActionListener(e -> {
             gameConfigs.setAllFalse();
@@ -105,6 +91,22 @@ public class TheGrid extends JFrame {
                 music.stopMusic();
             }
         });
+
+        // Tidräknare för spelad tid
+        ActionListener countingTime = e -> {
+            String zero = "";
+            if (seconds < 59) {
+                seconds++;
+                if (seconds < 10)
+                    zero = "0";
+            } else {
+                zero = "0";
+                seconds = 0;
+                minutes++;
+            }
+            timeCounter.setText("Time: " + minutes + ":" + zero + seconds);
+        };
+        timer = new Timer(1000, countingTime);
     }
 
     // Startmetod för tidräknaren
