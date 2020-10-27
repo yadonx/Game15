@@ -40,7 +40,7 @@ public class TheGrid extends JFrame {
                                                       {button9,button10,button11,button12},
                                                       {button13, button14, button15, button16}};
 
-    // Hej
+
     public TheGrid() {
         GameConfigs gameConfigs = new GameConfigs();
         gameConfigs.setButtonArray(buttonArray);
