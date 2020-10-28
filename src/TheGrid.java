@@ -68,7 +68,6 @@ public class TheGrid extends JFrame {
         }
 
 
-
         newGameButton.addActionListener(e -> {
             gameConfigs.setAllFalse();
             gameConfigs.newGame();
