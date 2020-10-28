@@ -1,7 +1,6 @@
 
 import javax.swing.*;
 import java.awt.event.*;
-
 /**
  * Created by Emil Johansson, Liliana Montini Pitra, Christoffer Grännby
  * Date: 2020-10-21
@@ -37,9 +36,9 @@ public class TheGrid extends JFrame {
     private Timer timer;
 
     private JButton[][] buttonArray = new JButton[][]{{button1, button2, button3, button4},
-            {button5, button6, button7, button8},
-            {button9, button10, button11, button12},
-            {button13, button14, button15, button16}};
+                                                      {button5, button6, button7, button8},
+                                                      {button9,button10,button11,button12},
+                                                      {button13, button14, button15, button16}};
 
     public TheGrid() {
         GameConfigs gameConfigs = new GameConfigs();
@@ -66,6 +65,7 @@ public class TheGrid extends JFrame {
                 buttonArray[row][column].addActionListener(gameTileListener);
             }
         }
+
 
         newGameButton.addActionListener(e -> {
             gameConfigs.setAllFalse();
@@ -123,6 +123,7 @@ public class TheGrid extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
     }
+
 
     public static void main(String[] args) {
         TheGrid tg = new TheGrid();
